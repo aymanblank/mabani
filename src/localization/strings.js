@@ -7,6 +7,10 @@ const strings = {
     ar: 'كلمة المرور',
     en: 'password'
   },
+  label_username: {
+    ar: '',
+    en: 'username'
+  },
   login_page_title:{
     ar: '',
     en: 'login'
@@ -42,6 +46,10 @@ const strings = {
   login_page_not_valid_msg:{
     ar: '',
     en: 'there is some invalid values, please check.'
+  },
+  link_forgot_password: {
+    ar: '',
+    en: 'forgot password?'
   },
 }
 

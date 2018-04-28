@@ -3,16 +3,19 @@ import { StyleSheet, Alert, Image, AsyncStorage } from 'react-native';
 import { Container, Content, Form, Item, Input, Label, Button, Text, Icon, Body, Title } from 'native-base';
 import translations from '../../../localization/translations';
 import TextButton from '../../common/TextButton';
+import TextLink from '../../common/TextLink';
 import { validateEmail, validateText, validatePhoneNumber, validatePassword, validatePasswordLength } from '../../../utils/validators';
 import FormValidator from '../../../utils/FormValidator';
 import routes from '../Router/routes';
-//import User from '../../../models/User';
+import User from '../../../models/User';
 import SpinnerOverlay from '../../common/SpinnerOverlay';
 import StorageKeys from '../../../utils/StorageKeys';
+import colors from '../../common/colors';
+import assets from '../../../utils/assets';
 
 const styles = StyleSheet.create({
   signinButton:{
-    marginTop: 16
+    marginTop: 20
   },
   form: {
     paddingTop: 16,
@@ -22,6 +25,16 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
   },
+  forgotPasswordLink: {
+    marginTop: 20
+  },
+  container: {
+    backgroundColor: colors.white
+  },
+  image: {
+    alignSelf: 'center',
+    marginTop: '30%'
+  }
 });
 
 export default class LoginPage extends React.Component {
@@ -41,13 +54,13 @@ export default class LoginPage extends React.Component {
     super();
 
     this.validator = new FormValidator();
-    this.validator.addField('email', validateEmail);
+    this.validator.addField('username', validateEmail);
     this.validator.addField('password', validatePasswordLength);
 
     this.state = {
-      email: '',
-      emailValid: true,
-      emailOk: false,
+      username: '',
+      usernameValid: true,
+      usernameOk: false,
       password: '',
       passwordValid: true,
       passwordOk: false,
@@ -63,7 +76,7 @@ export default class LoginPage extends React.Component {
 
   componentDidMount() {
     this.setState({
-      email: this.props.email || '',
+      username: this.props.username || '',
       password: this.props.password || '',
     });
   }
@@ -95,6 +108,18 @@ export default class LoginPage extends React.Component {
   }
 
   _login() {
+    
+    const user = new User({id: 123});
+    user.fetch()
+    .then(newUser => {
+      Alert.alert('good', 'done');
+      console.log('aaa', newUser);
+    })
+    .catch(error => {
+      Alert.alert('error', error.message);
+      console.log('eee', error);
+    });
+
     // if (this._valid()) {
     //   this._showHideOverlay();
     //   firebase.auth().signInAndRetrieveDataWithEmailAndPassword(this.state.email,this.state.password)
@@ -150,16 +175,17 @@ export default class LoginPage extends React.Component {
 
   render() {
     return (
-      <Container>
+      <Container style={styles.container}>
         <SpinnerOverlay visible={this.state.showOverlay} />
         <Content>
+          <Image style={styles.image} source={assets.LOGO} />
           <Form style={styles.form}>
-            <Item floatingLabel error={!this.state.emailValid} success={this.state.emailOk}>
-              <Label>{translations.get('label_email').toLabelCase()}</Label>
+            <Item floatingLabel error={!this.state.usernameValid} success={this.state.usernameOk}>
+              <Label>{translations.get('label_username').toLabelCase()}</Label>
               <Input 
-                value={this.state.email}
+                value={this.state.username}
                 keyboardType={'email-address'}
-                onChangeText={email => this._notifyChange({email})}/>
+                onChangeText={username => this._notifyChange({username})}/>
             </Item>
             <Item floatingLabel error={!this.state.passwordValid} success={this.state.passwordOk}>
               <Label>{translations.get('label_password').toLabelCase()}</Label>
@@ -173,6 +199,7 @@ export default class LoginPage extends React.Component {
             </Item>
           </Form>
           <TextButton disabled={!this._valid()} style={styles.signinButton} onPress={this._login} primary={this._valid()}>{translations.get('button_login').toLabelCase()}</TextButton>
+          <TextLink style={styles.forgotPasswordLink} >{translations.get('link_forgot_password').toLabelCase()}</TextLink>
         </Content>
       </Container>
     );
