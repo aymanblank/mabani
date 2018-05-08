@@ -109,16 +109,17 @@ export default class LoginPage extends React.Component {
 
   _login() {
     
-    const user = new User({id: 123});
-    user.fetch()
-    .then(newUser => {
-      Alert.alert('good', 'done');
-      console.log('aaa', newUser);
-    })
-    .catch(error => {
-      Alert.alert('error', error.message);
-      console.log('eee', error);
-    });
+    this.props.navigation.navigate(routes.HOME);
+    // const user = new User({id: 123});
+    // user.fetch()
+    // .then(newUser => {
+    //   Alert.alert('good', 'done');
+    //   console.log('aaa', newUser);
+    // })
+    // .catch(error => {
+    //   Alert.alert('error', error.message);
+    //   console.log('eee', error);
+    // });
 
     // if (this._valid()) {
     //   this._showHideOverlay();

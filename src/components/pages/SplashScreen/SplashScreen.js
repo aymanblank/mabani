@@ -4,6 +4,7 @@ import { Spinner } from 'native-base';
 import StorageKeys from '../../../utils/StorageKeys';
 import routes from '../Router/routes';
 import assets from '../../../utils/assets';
+import colors from '../../common/colors';
 
 const styles = StyleSheet.create({
   container:{
@@ -11,7 +12,8 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     justifyContent: 'center',
-    zIndex: 999
+    zIndex: 999,
+    backgroundColor: colors.white,
   },
   image:{
     alignSelf: 'center'
