@@ -1,27 +1,42 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Image, AsyncStorage, TouchableWithoutFeedback, Alert } from 'react-native';
-import { Body, Title } from 'native-base';
+import { Body, Title, Container, Content, Grid, Col } from 'native-base';
+import translations from '../../../localization/translations';
 import StorageKeys from '../../../utils/StorageKeys';
 import routes from '../Router/routes';
 import assets from '../../../utils/assets';
 import colors from '../../common/colors';
+import Logo from '../../common/Logo';
+import Announcement from './Announcement';
+import Block from './Block';
+import blocks from './blocks';
+import Footer from './Footer';
 
 const styles = StyleSheet.create({
   container:{
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    justifyContent: 'center',
-    zIndex: 999,
     backgroundColor: colors.white,
   },
-  image:{
-    width: '100%',
-    height: '100%',
+  content:{
+    flex: 1,
+    justifyContent: 'space-evenly',
+  },
+  col:{
+    marginVertical: 0,
+  },
+  logo:{
+    flex: 1,
+    marginBottom: 5,
+  },
+  announcement:{
+    flex: 2,
+  },
+  grid:{
+    flex: 11,
+  },
+  footer:{
+    flex: 1,
   }
 });
-
-const backImage = require('../../../../assets/home.png');
 
 export default class HomePage extends Component {
 
@@ -30,7 +45,7 @@ export default class HomePage extends Component {
     return {
       headerTitle: (
         <Body>
-          <Title>{'Home'}</Title>
+          <Title>{translations.get('home_page_title').toTitleCase()}</Title>
         </Body>
       ),
     }
@@ -38,23 +53,38 @@ export default class HomePage extends Component {
 
   constructor() {
     super();
+    this._handleBlockPress = this._handleBlockPress.bind(this);
   }
 
-  componentWillMount(){
-
-  }
-
-  showAlert(){
-    Alert.alert('Mabani', 'Mabani demo (phase one) task completed, The remaining is for phase 2');
+  _handleBlockPress(block){
+    this.props.navigation.navigate(block.page);
   }
 
   render() {
     return (
-      <View style={styles.container}>
-        <TouchableWithoutFeedback onPress={this.showAlert}>
-          <Image style={styles.image} source={backImage} />
-        </TouchableWithoutFeedback>
-      </View>
+      <Container style={styles.container}>
+        <Content contentContainerStyle={styles.content} >
+          <Logo style={styles.logo} />
+          <Announcement style={styles.announcement} title={'Test Title'} text={'some fake text'} />
+          <Grid style={styles.grid}>
+            <Col style={styles.col}>
+              {blocks.left.map(block => {
+                return (
+                  <Block iconWidth={block.width} iconHeight={block.height} label={block.label} icon={block.icon} onPress={() => this._handleBlockPress(block)} />
+                );
+              })}
+            </Col>
+            <Col style={styles.col}>
+              {blocks.right.map(block => {
+                return (
+                  <Block iconWidth={block.width} iconHeight={block.height} label={block.label} icon={block.icon} onPress={() => this._handleBlockPress(block)} />
+                );
+              })}
+            </Col>
+          </Grid>
+          <Footer style={styles.footer} />
+        </Content>
+      </Container>
     );
   }
 }

@@ -1,5 +1,28 @@
 const assets = {
   LOGO: require('../../assets/logo.png'),
+  MABANI: require('../../assets/mabani_logo.png'),
+  CAR: require('../../assets/car.png'),
+  HOME: require('../../assets/home_icon.png'),
+  SETTINGS: require('../../assets/settings_icon.png'),
+  REPORTS: require('../../assets/reports_icon.png'),
+  PHOTOS: require('../../assets/photos_icon.png'),
+  HANDOVER: require('../../assets/handover_icon.png'),
+  VARIATIONS: require('../../assets/variations_icon.png'),
+  SUBCONTRACTOR: require('../../assets/subcontractor_icon.png'),
+  MANPOWER: require('../../assets/manpower_icon.png'),
+  MATERIAL_REQUEST: require('../../assets/material_request_icon.png'),
+  TOOLS_EQUIPMENTS: require('../../assets/tools_equipments_icon.png'),
+  TENDERS: require('../../assets/tenders_icon.png'),
+  PROJECTS: require('../../assets/projects_icon.png'),
+  ATTACHMENTS: require('../../assets/attachments_icon.png'),
+  PROJECT_TYPE: require('../../assets/project_type_icon.png'),
+  LOCATION: require('../../assets/location_icon.png'),
+  CONSALTANT: require('../../assets/consaltant_icon.png'),
+  OWNER: require('../../assets/owner_icon.png'),
+  DEADLINE: require('../../assets/deadline_icon.png'),
+  RECEIVED: require('../../assets/received_icon.png'),
+  BIDDING_BOND: require('../../assets/bidding_bond_icon.png'),
+  PERFORMANCE_BOND: require('../../assets/performance_bond_icon.png'),
 };
 
 export default assets;
