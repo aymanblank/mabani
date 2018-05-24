@@ -29,6 +29,8 @@ export default class Tender {
     this.attachments = obj.attachments || [];
     this.notes = obj.notes || [];
     this.items = obj.items || null;
+    this.itemsTotal = obj.itemsTotal || 0;
+    this.itemsPricing = obj.itemsPricing || 0;
   }
 
   fetch() {

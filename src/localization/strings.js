@@ -230,7 +230,11 @@ const strings = {
   connection_back_msg:{
     ar: '',
     en: 'Internet connection is back.'
-  }
+  },
+  total:{
+    ar: '',
+    en: 'total'
+  },
 }
 
 export default strings;

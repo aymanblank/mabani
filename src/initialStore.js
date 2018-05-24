@@ -80,6 +80,8 @@ const tempTenders = () => {
       cost: 10.5,
       pricing: 145.67
     }],
+    itemsTotal: 'asfd134.44',
+    itemsPricing: 5432.25333,
   });
   tenders.push(tender2);
 

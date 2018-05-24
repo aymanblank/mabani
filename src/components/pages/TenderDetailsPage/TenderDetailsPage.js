@@ -10,6 +10,7 @@ import Buttons from './Buttons';
 import Note from './Note';
 import HeaderItem from './HeaderItem';
 import Item from './Item';
+import Pricing from './Pricing';
 
 const { width, height } = Dimensions.get('window');
 
@@ -121,6 +122,7 @@ export default class TenderDetailsPage extends React.Component {
                   isItemDark = !isItemDark;
                   return <Item dark={isItemDark} details={item.details} quantity={item.quantity} cost={item.cost} pricing={item.pricing} /> 
                 })}
+                <Pricing total={tender.itemsTotal} pricing={tender.itemsPricing} />
               </View>
               : null }
             </ScrollView>
