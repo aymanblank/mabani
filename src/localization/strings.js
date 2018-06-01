@@ -235,6 +235,38 @@ const strings = {
     ar: '',
     en: 'total'
   },
+  projetcs_page_title:{
+    ar: '',
+    en: 'projects'
+  },
+  navigate_to_project_modal_title:{
+    ar: '',
+    en: 'select project'
+  },
+  assign_manager:{
+    ar: '',
+    en: 'assign manager'
+  },
+  area_manager:{
+    ar: '',
+    en: 'area manager'
+  },
+  select_one:{
+    ar: '',
+    en: 'select one'
+  },
+  demarcation:{
+    ar: '',
+    en: 'demarcation'
+  },
+  construction_certification:{
+    ar: '',
+    en: 'construction certification'
+  },
+  temporary_w_and_e_lines:{
+    ar: '',
+    en: 'temporary w & e lines'
+  }
 }
 
 export default strings;

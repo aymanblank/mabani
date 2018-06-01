@@ -23,6 +23,7 @@ const assets = {
   RECEIVED: require('../../assets/received_icon.png'),
   BIDDING_BOND: require('../../assets/bidding_bond_icon.png'),
   PERFORMANCE_BOND: require('../../assets/performance_bond_icon.png'),
+  ASSIGN_MANAGER: require('../../assets/owner_icon.png'),
 };
 
 export default assets;

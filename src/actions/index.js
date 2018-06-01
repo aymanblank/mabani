@@ -47,3 +47,9 @@ export const addTenderNote = (tender, userId, note, dispatch) => {
     });
   }).catch(error => {});
 }
+
+export const setProjects = (projects) =>
+  ({
+    type: C.SET_PROJECTS,
+    payload: projects
+  })

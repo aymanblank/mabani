@@ -43,10 +43,30 @@ export const tenders = (state=[], action) => {
   }
 }
 
+export const projects = (state=[], action) => {
+  switch(action.type) {
+    case C.SET_PROJECTS :
+      return action.payload;
+  	default: 
+  		return state
+  }
+}
+
+export const areaManagers = (state=[], action) => {
+  switch(action.type) {
+    case C.SET_AREA_MANAGERS :
+      return action.payload;
+  	default: 
+  		return state
+  }
+}
+
 export default combineReducers({
   connectionStatus,
   user,
   tenders,
+  projects,
+  areaManagers,
 })
 
 

@@ -1,5 +1,6 @@
 import Tender from './models/Tender';
 import User from './models/User';
+import Project from './models/Project';
 
 const tempUser = () => {
   const user = new User({
@@ -118,8 +119,76 @@ const tempTenders = () => {
   return tenders;
 }
 
+const tempProjects = () => {
+  const projects = [];
+  const project1 = new Project({
+    id: '1',
+    number: 'N123',
+    selected: false,
+    status: 'in progress',
+    details: 'Some fake fake details ... Some fake fake details ... Some fake fake details ... Some fake fake details ... Some fake fake details ... Some fake fake details ... Some fake fake details ...',
+    demarcations:[
+      {
+        description: 'Submit site manager ID & the contract with the project owner to munacipility with application through the PRO.',
+        available: true,
+      },
+      {
+        description: 'Update system with the result of the visit of the land Surveryer.',
+        available: false,
+      },
+    ],
+    constructionCertifications: [
+      {
+        description: 'Install Site signboard',
+        available: false,
+      },
+      {
+        description: 'Install Safty signboard',
+        available: false,
+      },
+    ],
+    temporaryWAndELines: [
+      {
+        description: 'LDN',
+        available: false,
+      },
+      {
+        description: 'WDN',
+        available: true,
+      }
+    ],
+    notes: [{
+      label: 'PD',
+      details: 'Dear General Manager,\nthis is to report to you that we have a delay in issuing the CC.'
+    },
+    {
+      label: 'GM',
+      details: "What's your input on the matter site manager?"
+    }],
+  });
+  projects.push(project1);
+
+  return projects;
+}
+
+const tempAreaManagers = () => {
+  const areaManagers = [];
+  areaManagers.push({
+    label: 'Ayman Salah',
+    id: '1'
+  });
+  areaManagers.push({
+    label: 'Ahmad Omari',
+    id: '2'
+  });
+
+  return areaManagers;
+}
+
 const initialStore = {
   user: tempUser(),
   tenders: tempTenders(),
+  projects: tempProjects(),
+  areaManagers: tempAreaManagers(),
 }
 export default initialStore;
