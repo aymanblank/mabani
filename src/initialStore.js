@@ -1,6 +1,7 @@
 import Tender from './models/Tender';
 import User from './models/User';
 import Project from './models/Project';
+import QuantitySubmission from './models/QuantitySubmission';
 
 const tempUser = () => {
   const user = new User({
@@ -185,10 +186,41 @@ const tempAreaManagers = () => {
   return areaManagers;
 }
 
+const tempQuantitySubmissions = () => {
+  const quantitySubmissions = [];
+  quantitySubmissions.push(new QuantitySubmission({
+    id: '1',
+    projectNumber: 'A112',
+    item: 'Flooring',
+    contractor: 'Al Bahar flooring works LLC',
+    currentQuantity: '2600 sqm',
+    previousQuantity: '2200 sqm',
+    totalQuantity: '4800 sqm',
+    approvedQuantity: '8800 sqm',
+    approvedRate: 'AED 40/Sqm',
+    totalEarnings: 'AED 192,000',
+  }));
+  quantitySubmissions.push(new QuantitySubmission({
+    id: '2',
+    projectNumber: 'A114',
+    item: 'Flooring',
+    contractor: 'Al Basheer flooring works LLC',
+    currentQuantity: '4400 sqm',
+    previousQuantity: '3300 sqm',
+    totalQuantity: '6800 sqm',
+    approvedQuantity: '10500 sqm',
+    approvedRate: 'AED 65/Sqm',
+    totalEarnings: 'AED 256,000',
+  }));
+
+  return quantitySubmissions;
+}
+
 const initialStore = {
   user: tempUser(),
   tenders: tempTenders(),
   projects: tempProjects(),
   areaManagers: tempAreaManagers(),
+  quantitySubmissions: tempQuantitySubmissions(),
 }
 export default initialStore;

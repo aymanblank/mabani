@@ -266,7 +266,75 @@ const strings = {
   temporary_w_and_e_lines:{
     ar: '',
     en: 'temporary w & e lines'
-  }
+  },
+  subcontractors:{
+    ar: '',
+    en: 'subcontractors'
+  },
+  q_submissions:{
+    ar: '',
+    en: 'q submissions'
+  },
+  quantity_submission:{
+    ar: '',
+    en: 'quantity submission'
+  },
+  performance:{
+    ar: '',
+    en: 'performance'
+  },
+  assign:{
+    ar: '',
+    en: 'assign'
+  },
+  current:{
+    ar: '',
+    en: 'current'
+  },
+  previous:{
+    ar: '',
+    en: 'previous'
+  },
+  approved:{
+    ar: '',
+    en: 'approved'
+  },
+  project:{
+    ar: '',
+    en: 'project'
+  },
+  item:{
+    ar: '',
+    en: 'item'
+  },
+  contractor:{
+    ar: '',
+    en: 'contractor'
+  },
+  current_quantity:{
+    ar: '',
+    en: 'current quantity'
+  },
+  previous_quantity:{
+    ar: '',
+    en: 'previous quantity'
+  },
+  total_quantity:{
+    ar: '',
+    en: 'total quantity'
+  },
+  approved_quantity:{
+    ar: '',
+    en: 'approved quantity'
+  },
+  approved_rate:{
+    ar: '',
+    en: 'approved rate'
+  },
+  total_earnings:{
+    ar: '',
+    en: 'total earnings'
+  },
 }
 
 export default strings;

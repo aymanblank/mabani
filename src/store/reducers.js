@@ -61,12 +61,22 @@ export const areaManagers = (state=[], action) => {
   }
 }
 
+export const quantitySubmissions = (state=[], action) => {
+  switch(action.type) {
+    case C.SET_QUANTITY_SUBMISSIONS :
+      return action.payload;
+  	default: 
+  		return state
+  }
+}
+
 export default combineReducers({
   connectionStatus,
   user,
   tenders,
   projects,
   areaManagers,
+  quantitySubmissions,
 })
 
 

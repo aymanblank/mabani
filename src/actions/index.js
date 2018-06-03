@@ -53,3 +53,9 @@ export const setProjects = (projects) =>
     type: C.SET_PROJECTS,
     payload: projects
   })
+
+export const setQuantitySubmissions = (quantitySubmissions) =>
+({
+  type: C.SET_QUANTITY_SUBMISSIONS,
+  payload: quantitySubmissions
+})

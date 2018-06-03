@@ -12,7 +12,7 @@ const blocks = {
   right: [
     { icon: assets.PROJECTS, label: 'projects', page: routes.PROJECTS, width: 30, height: 30 },
     { icon: assets.MATERIAL_REQUEST, label: 'material_request', width: 30, height: 30 },
-    { icon: assets.SUBCONTRACTOR, label: 'subcontractor', width: 30, height: 30 },
+    { icon: assets.SUBCONTRACTOR, label: 'subcontractor', page: routes.SUBCONTRACTORS, width: 30, height: 30 },
     { icon: assets.REPORTS, label: 'reports', width: 20, height: 30 },
     { icon: assets.HANDOVER, label: 'handover', width: 30, height: 30 },
   ]
